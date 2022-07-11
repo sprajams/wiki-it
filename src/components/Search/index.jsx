@@ -1,5 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import ArticleLink from "../ArticleLink";
+import styles from "./styles.module.scss";
 function Search() {
   const [searchArr, setSearchArr] = useState([]);
   const onClick = () => {
@@ -8,24 +9,24 @@ function Search() {
     )
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setSearchArr(data.query.search);
       });
   };
-  useEffect(() => console.log(searchArr, "response"), [searchArr]);
 
   return (
     <div>
       <button onClick={onClick}>search</button>
-      {searchArr.length > 0
-        ? searchArr.map((x, i) => {
-            return (
-              <div key={i}>
-                <ArticleLink article={x} />
-              </div>
-            );
-          })
-        : null}
+      <ul className={styles.searchesContainer}>
+        {searchArr.length > 0
+          ? searchArr.map((x, i) => {
+              return (
+                <li key={i}>
+                  <ArticleLink article={x} />
+                </li>
+              );
+            })
+          : null}
+      </ul>
     </div>
   );
 }
