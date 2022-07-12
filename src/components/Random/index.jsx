@@ -1,3 +1,5 @@
+import styles from "./styles.module.scss";
+
 function Random() {
   // open up a random wiki article in a new page
   const onClick = () => {
@@ -8,8 +10,10 @@ function Random() {
     );
   };
   return (
-    <div>
-      <button onClick={onClick}>RANDOM</button>
+    <div className={styles.wrap}>
+      <button onClick={onClick} className={styles.btnRandom}>
+        RANDOM
+      </button>
     </div>
   );
 }

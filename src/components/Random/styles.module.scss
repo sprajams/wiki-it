@@ -1,0 +1,13 @@
+.wrap {
+  //   width: 100%;
+  @media (min-width: 768px) {
+    width: 125px;
+    height: 100%;
+  }
+}
+.btnRandom {
+  width: 100%;
+  @media (min-width: 768px) {
+    height: 38px;
+  }
+}

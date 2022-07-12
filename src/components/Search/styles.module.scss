@@ -1,7 +1,21 @@
-.searchesContainer {
-  list-style: none;
-  padding: 0;
+.formWrap {
   display: flex;
-  flex-direction: column;
-  gap: 10px;
+  @media (max-width: 767px) {
+    flex-direction: column;
+  }
+}
+
+.formInput {
+  padding: 5px 10px;
+  @media (min-width: 768px) {
+    width: 500px;
+  }
+}
+
+.buttonInput {
+  text-transform: uppercase;
+  @media (min-width: 768px) {
+    width: 125px;
+    height: 38px;
+  }
 }
